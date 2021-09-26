@@ -33,7 +33,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text="0.1" />
+                android:text="1473" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -58,7 +58,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text="0.1" />
+                android:text="2094991" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -83,7 +83,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text="0.1" />
+                android:text="17" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -108,7 +108,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text="0.1" />
+                android:text="0" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -133,7 +133,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:text="0.1" />
+                android:text="1 " />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -157,7 +157,7 @@
                 android:id="@+id/mx"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="0.1"
+                android:text="0.5"
                 android:inputType="number"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -182,7 +182,7 @@
                 android:id="@+id/sigma"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="0.1"
+                android:text="0.15"
                 android:inputType="number"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -207,7 +207,7 @@
                 android:id="@+id/lambda"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="0.1"
+                android:text="100"
                 android:inputType="number"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -232,7 +232,7 @@
                 android:id="@+id/nu"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="0.1"
+                android:text="10"
                 android:inputType="number"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -243,36 +243,51 @@
             android:orientation="horizontal">
 
            <RadioGroup
+               android:id="@+id/group"
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
 
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/unifogm"
+                   android:checked="true"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Uniform"/>
 
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/gaussian"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Gaussian"/>
 
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/exponential"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Exponential"/>
 
 
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/gamma"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Gamma"/>
 
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/triangle"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Triangle"/>
 
+
                <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/triangle_reverse"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Triangle reverse"/>
+
+               <com.google.android.material.radiobutton.MaterialRadioButton
+                   android:id="@+id/simpson"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Simpson"/>
@@ -282,9 +297,9 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onCalculateClick"
             android:text="Calculate"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -293,18 +308,19 @@
             android:orientation="horizontal">
 
             <TextView
+
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Calculated Mx: "/>
 
             <View
-                android:id="@+id/calculated_mx"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/calculated_mx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"/>
@@ -323,12 +339,13 @@
                 android:text="Calculated Dx: "/>
 
             <View
-                android:id="@+id/calculated_dx"
+
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/calculated_dx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"/>
@@ -347,12 +364,12 @@
                 android:text="Calculated Sx: "/>
 
             <View
-                android:id="@+id/calculated_sx"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/calculated_sx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"/>
